@@ -32,3 +32,15 @@ output "vpc_id" {
 output "cidr" {
     value = "${aws_vpc.tfb.cidr_block}"
 }
+
+output "ELB_Address" {
+    value = "${aws_elb.web.dns_name}"
+
+}
+output "adresses" {
+    value = "${aws_instance.web.*.public_ip}"
+}
+
+output "public_subnet_id" {
+    value = "${module.vpc.public_subnet_id}"
+}
